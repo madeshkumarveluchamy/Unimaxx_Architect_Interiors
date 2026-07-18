@@ -1,0 +1,176 @@
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, EffectCoverflow } from 'swiper/modules';
+
+// Swiper CSS imports
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
+
+// Custom CSS
+import './css/VoicesOfClients.css';
+
+// Your assets (Make sure these paths match your project structure)
+import slide1 from '../../assets/voice1.png';
+import slide2 from '../../assets/voice2.png';
+import slide3 from '../../assets/voice3.png';
+import vasuAvatar from '../../assets/vasu-icon.png'; // Update with your actual avatar path
+
+export default function VoicesOfClients() {
+  
+  // அனைத்து ஸ்லைடுகளுக்கும் கல்வித் தரவுடன் விரிவான மதிப்புரைகள் (வாசுவே மதிப்பாய்வாளர்)
+  const slides = [
+    {
+      id: 2,
+      image: slide2,
+      title: 'Azure Hallway',
+      year: '2026',
+      tags: ['Oceanic', 'Natural Light'],
+      hasReview: true,
+      review: {
+        headline: 'Quiet Architectural Confidence',
+        content: "The interior feels calm and perfectly balanced. Nothing is excessive, nothing is missing. It's a space that reveals its quality over time.",
+        authorName: 'Vasu',
+        authorRole: 'Development Manager — Covai Groups',
+        authorAvatar: vasuAvatar,
+      },
+    },
+    {
+      id: 1,
+      image: slide1,
+      title: 'Tranquility',
+      year: '2025',
+      tags: ['Minimalism', 'Natural'],
+      hasReview: true, // அனைத்து ஸ்லைடுகளிலும் இப்போது மதிப்புரை உள்ளது
+      review: {
+        headline: 'Natural Minimalism Personified',
+        content: "Tranquility perfectly captures the essence of modern living. Minimalist design and native elements blend seamlessly to provide true peace of mind. A wonderful experience.",
+        authorName: 'Vasu',
+        authorRole: 'Development Manager — Covai Groups',
+        authorAvatar: vasuAvatar,
+      },
+    },
+
+    {
+      id: 3,
+      image: slide3,
+      title: 'Coastal Serenity',
+      year: '2024',
+      tags: ['Coastal', 'Modern'],
+      hasReview: true,
+      review: {
+        headline: 'Light and Coastal Modern Living',
+        content: "Light and space are the ultimate luxuries here. A modern take on coastal living that prioritizes natural light and connection to nature. Absolutely divine.",
+        authorName: 'Vasu',
+        authorRole: 'Development Manager — Covai Groups',
+        authorAvatar: vasuAvatar,
+      },
+    },
+    
+     
+  ];
+
+  return (
+    <section className="voc-section">
+      {/* Top Header Area */}
+      <header className="voc-header">
+        <div className="voc-header-left">
+          <div className="voc-badge">
+            <span className="voc-orange-square"></span>
+            <span className="voc-badge-text">Experience-Led</span>
+          </div>
+        </div>
+
+        <div className="voc-header-center">
+          <h2 className="voc-title">Voices of Our Clients</h2>
+        </div>
+
+        <div className="voc-header-right">
+          <p className="voc-subtitle">
+            A visual library of interiors brought to life from blueprint to beauty.
+          </p>
+          <div className="voc-nav-buttons">
+            <button className="voc-arrow-btn voc-prev">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <button className="voc-arrow-btn voc-next">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Swiper Slider Area */}
+      <div className="voc-slider-container">
+        <Swiper
+          modules={[Navigation, EffectCoverflow]}
+          effect="coverflow"
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView="auto"
+          initialSlide={1} // Makes the second slide (Azure Hallway) active by default
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: false,
+          }}
+          navigation={{
+            prevEl: '.voc-prev',
+            nextEl: '.voc-next',
+          }}
+          className="voc-swiper"
+        >
+          {slides.map((slide) => (
+            <SwiperSlide key={slide.id} className="voc-slide">
+              {({ isActive }) => (
+                <div className={`voc-card ${isActive ? 'is-active' : ''}`}>
+                  <div className="voc-image-wrapper">
+                    <img src={slide.image || "https://via.placeholder.com/800x500"} alt={slide.title} className="voc-main-img" />
+                    
+                    {/* Glassmorphism Review Overlay - Only visible if has review; Swiper handles fading for non-active slides */}
+                    {slide.hasReview && (
+                      <div className="voc-glass-overlay">
+                        <h3 className="voc-glass-title">{slide.review.headline}</h3>
+                        <p className="voc-glass-text">{slide.review.content}</p>
+                        <div className="voc-author-block">
+                          <img 
+                            src={slide.review.authorAvatar || "https://via.placeholder.com/40"} 
+                            alt={slide.review.authorName} 
+                            className="voc-avatar" 
+                          />
+                          <div className="voc-author-info">
+                            <span className="voc-author-name">{slide.review.authorName}</span>
+                            <span className="voc-author-role">{slide.review.authorRole}</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Bottom Meta Data */}
+                  <div className="voc-card-meta">
+                    <div className="voc-meta-left">
+                      <h4 className="voc-item-title">{slide.title}</h4>
+                      <span className="voc-item-year">{slide.year}</span>
+                    </div>
+                    <div className="voc-meta-right">
+                      {slide.tags.map((tag, index) => (
+                        <span key={index} className="voc-tag">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
+}

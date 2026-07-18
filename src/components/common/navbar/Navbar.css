@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "Futura";
+  src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+  font-weight: 700;
+}
+
+/* --- Main Navbar Header --- */
+.navbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Desktop-ல் சென்டராக இருக்க */
+  padding: 20px 4%; 
+  position: fixed; /* Scrolling sticky */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  font-family: "Futura", sans-serif;
+  gap: 15px; /* பாக்ஸங்களுக்கு இடையே இடைவெளி */
+}
+
+/* --- Left Side Wrapper (Logo Header) --- */
+.nav-mobile-header {
+  flex: 1; /* மெனுவை சரியாக நடுவில் வைக்க இது உதவும் */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* --- Logo Box (தனி பாக்ஸ்) --- */
+.nav-logo-box {
+  background-color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 8px; /* நாலு பக்கமும் வளைவு */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* மிதக்கும் நிழல் */
+}
+
+.nav-logo-box img {
+  height: 40px; 
+  object-fit: contain;
+  display: block;
+}
+
+/* --- Hamburger Icon (Hidden on Desktop) --- */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: auto;
+}
+
+.nav-hamburger .bar {
+  width: 22px;
+  height: 2.5px;
+  background-color: #222222;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* --- Navigation Links Pill (நடுவில் தனி பாக்ஸ்) --- */
+.nav-links-container {
+  background-color: #ffffff;
+  padding: 15px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1e1d1d; 
+  font-weight: 400;
+  font-family: "Futura", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f5b041; 
+}
+
+/* --- Right Side Yellow Split Button --- */
+.nav-project-btn-group {
+  flex: 1; /* மெனுவை சரியாக நடுவில் வைக்க இது உதவும் */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0px; 
+  position: relative;
+  top: 1px;
+}
+
+.btn-text-part {
+
+  background-color:  #FCB037;
+  color: #111111;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'futura', sans-serif;
+  transition: background-color 0.3s ease;
+
+}
+
+
+
+.btn-arrow-part {
+  background-color: #FCB037;
+  color: #111111;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.btn-text-part:hover,
+
+.btn-arrow-part:hover {
+
+  background-color: #e5930e;
+
+}
+
+
+/* ==========================================
+   🎯 RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+/* --- Tablet View --- */
+@media (max-width: 1024px) {
+  .nav-links-container {
+    padding: 15px 25px;
+    gap: 20px;
+  }
+  .nav-link {
+    font-size: 12px;
+  }
+  .btn-text-part {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+  .btn-arrow-part {
+    padding: 8px 14px;
+  }
+}
+
+/* --- Mobile View --- */
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    flex-direction: column;
+    padding: 15px !important; 
+    align-items: stretch;
+    gap: 10px; /* ஹெடருக்கும் டிராப்டவுனுக்கும் இடைவெளி */
+  }
+
+  .nav-mobile-header {
+    width: 100% !important;
+    background-color: #ffffff;
+    padding: 10px 20px !important; 
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* மொபைல் பாரில் ஷேடோ */
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .nav-logo-box {
+    padding: 0 !important;
+    box-shadow: none !important; /* லோகோ பாக்ஸின் நிழல் நீக்கம் */
+    background-color: transparent;
+  }
+
+  .nav-logo-box img {
+    height: 35px;
+  }
+
+  /* Show Hamburger on Mobile */
+  .nav-hamburger {
+    display: flex !important;
+  }
+
+  /* Hamburger Click Animations */
+  .nav-hamburger .bar.active:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+  .nav-hamburger .bar.active:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-hamburger .bar.active:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+
+  /* Hide links by default on Mobile */
+  .nav-links-container {
+    display: none; 
+    flex-direction: column;
+    width: 100% !important;
+    background-color: #ffffff;
+    padding: 20px 0 !important;
+    gap: 20px;
+  }
+
+  /* Show links when toggled */
+  .nav-links-container.show-menu {
+    display: flex !important;
+    animation: fadeInDown 0.3s ease-in-out;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  /* Mobile View-ல் "Start a Project" பட்டனை மறைக்க */
+  .nav-project-btn-group {
+    display: none !important;
+  }
+}
+
+/* Dropdown Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
