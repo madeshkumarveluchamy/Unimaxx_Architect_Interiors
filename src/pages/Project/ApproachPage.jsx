@@ -42,7 +42,7 @@ function AnimatedApproachBlock({ item }) {
             }
             const suffix = item.projectsCount.includes("+") ? "+" : "";
             numberRef.current.textContent = curr + suffix;
-          }, 25);
+          }, 95);
         }
 
         // 3) Text typing / fade-in animation
@@ -55,7 +55,7 @@ function AnimatedApproachBlock({ item }) {
             // Remove typing class after duration
             setTimeout(() => {
               pRef.current.classList.remove("typing");
-            }, 3200);
+            }, 5200);
           }
         }, 300);
 

@@ -13,12 +13,12 @@
   font-weight: 700;
 }
 
-.featured-section { padding: 60px 80px; background: #fff; }
+.featured-sections {  background: #fff; }
 
 .label-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px;position: relative;left: 20px; }
 
 .label-text {
-  font-size: 16px;
+  font-size: 21px;
   font-weight: 300;
    font-family: "Futura", sans-serif;
   color: #252661;
@@ -57,52 +57,83 @@
   flex-shrink: 0;
 }
 
-.title-wrapper1 {
+.title-wrappers1 {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 30px;
 }
 
+.work-header{
+display:flex ;
+justify-content:space-between;
+margin-bottom:20px;
+align-items:center;
+
+}
+.feature-section-title-div{
+display:flex ;
+justify-content:space-between;
+margin-bottom:20px;
+align-items:flex-end;
+gap:30px;
+}
+
+ @media(max-width:890px){
+  .work-header, .feature-section-title-div{
+display:flex ;
+flex-direction:column;
+justify-content:space-between;
+margin-bottom:20px;
+align-items:center;
+
+
+}
+.section-desc-wrk{
+  text-align:center;
+}
+ }
 .section-title{
-  font-size: clamp(22px, 4vw, 40px);
+  font-size: clamp(22px, 4vw, 50px);
   font-weight: 200;
   color: #000;
   font-family: "Futura", sans-serif;
   position: relative;
-  left: 390px;
-  bottom: 91px;
+  margin:0px !important;
   
 }
 
 .section-desc-wrk {
   color: #656565;
-  max-width: 280px;
-  font-size: 13px;
+  max-width: 350px;
+  font-weight:600;
+  font-size: 15px;
    font-family: 'Hanken Grotesk', sans-serif !important;
   line-height: 1.6;
   position: relative;
-  bottom: 120px;
-  right: 40px;
 }
 
 .works-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;
   position: relative;
-  left: 10px;
-
+  width: 100%;
 }
 
+.card-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
 .work-card {
-  position: relative;
+  position: sticky;
+  top: 0px; /* Adjust this to match your navbar height so it stops perfectly underneath */
   border-radius: 10px;
   overflow: hidden;
-  height: 430px;
-  width: 1100px;
-  position: relative;
-  left: 10px;
+  height: 530px;
+  background: #fff;
+  /* Add a shadow so the cards have depth when they overlap */
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4); 
 }
 
 .work-img {
@@ -120,7 +151,6 @@
   backdrop-filter: blur(1px);
   padding: 5px 10px;
    width: 700px;
-   height: 105px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -233,7 +263,7 @@
   background-color: #f5b041;
   color: #111;
   padding: 6px 11px;
-  font-size: 12px;
+  font-size: 17px;
   font-weight: 600;
   border-radius: 8px;
   display: flex;
@@ -258,7 +288,7 @@
    768px–991px, 992px–1199px, 1200px–1439px, 1440px–1919px
    ========================================================= */
 @media (min-width: 320px) and (max-width: 480px) {
-  .featured-section {
+  .featured-sections {
     padding: 24px 10px;
   }
 
@@ -268,7 +298,7 @@
     margin-bottom: 6px;
   }
   .label-text{
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .title-container {
@@ -276,28 +306,26 @@
     align-items: center;
   }
 
-  .title-wrapper1 {
+  .title-wrappers1 {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    margin-bottom: 16px;
   }
 
   .section-title {
-    left: -10px;
-    bottom: 20px;
+
     text-align: center;
     font-size: clamp(26px, 6vw, 26px);
   }
 
   .section-desc-wrk {
-    right: 0;
-    bottom: 0;
+
     text-align: center;
     max-width: 100%;
     font-size: 11px;
     margin: 0 auto;
   }
+  
 
   .works-grid {
     gap: 22px;
@@ -315,10 +343,9 @@
     position: absolute;
     top: 70%;
     left: 50%;
-    
+    height:120px;
     transform: translate(-50%, -50%);
     width: 94%;
-    height: 88x;
     padding: 8px 10px;
     border-radius: 8px;
     background: rgba(0, 0, 0, 0.5);
@@ -391,7 +418,7 @@
   }
 
   .client-project-btn .featured-text {
-    font-size: 11px;
+    font-size: 18px;
     padding: 5px 10px;
   }
 
@@ -404,7 +431,7 @@
    320px–374px
 ========================= */
 @media (min-width: 320px) and (max-width: 374px) {
-  .featured-section {
+  .featured-sections {
     padding: 24px 10px;
   }
 
@@ -419,33 +446,29 @@
     align-items: center;
   }
 
-  .title-wrapper1 {
+  .title-wrappers1 {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    margin-bottom: 16px;
   }
 
   .section-title {
-    left: 10px;
-    bottom: 10px;
+  
     text-align: center;
     font-size: 20px;
   }
 
   .section-desc-wrk {
-    right: 0;
-    bottom: 25px;
     text-align: center;
     max-width: 100%;
-    font-size: 11px;
+    font-size: 13px;
     margin: 0 auto;
   }
 
   .work-card {
-    width: 160%;
+    width: 100%;
     height: 220px;
-    left: -47px;
+
    
   }
 
@@ -495,7 +518,7 @@
    375px–480px
 ========================= */
 @media (min-width: 375px) and (max-width: 480px) {
-  .featured-section {
+  .featured-sections {
     padding: 26px 12px;
   }
 
@@ -510,44 +533,38 @@
     align-items: center;
   }
 
-  .title-wrapper1 {
+  .title-wrappers1 {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    margin-bottom: 18px;
   }
 
   .section-title {
     position: relative;
-    right: -30px;
-    bottom: 10px;
     text-align: center;
     font-size: 26px;
   }
 
   .section-desc-wrk {
-    right: 0;
-    bottom: 20px;
     text-align: center;
     max-width: 100%;
-    font-size: 12px;
+    font-size: 13px;
     margin: 0 auto;
   }
 
   .work-card {
-    width: 150%;
+    width: 100%;
     height: 240px;
-    left: 0;
+
     position: relative;
-    left: -53px;
+
   }
 
   .overlay {
      position: absolute;
-    top: 50%;
+    top: 43%;
     left: 50%;
     width: 90%;
-    height: 110px;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
@@ -605,7 +622,7 @@
    481px–767px
 ========================= */
 @media (min-width: 481px) and (max-width: 767px) {
-  .featured-section {
+  .featured-sections {
     padding: 30px 14px;
   }
 
@@ -620,41 +637,38 @@
     align-items: center;
   }
 
-  .title-wrapper1 {
+  .title-wrappers1 {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
   }
 
   .section-title {
-    left: 0;
-    bottom: 0;
+
     text-align: center;
     font-size: 24px;
   }
 
   .section-desc-wrk {
-    right: 0;
-    bottom: 0;
+
     text-align: center;
     max-width: 100%;
-    font-size: 12px;
+    font-size: 13px;
     margin: 0 auto;
   }
 
   .work-card {
     width: 100%;
     height: 260px;
-    left: 0;
+
   }
 
   .overlay {
     width: 90%;
-    height: 72px;
+    top:40%;
     left: 50%;
     right: auto;
-    bottom: 16px;
+    bottom: 20px;
     transform: translateX(-50%);
     padding: 8px 10px;
     flex-direction: column;
@@ -709,11 +723,11 @@
    768px–991px
 ========================= */
 @media (min-width: 768px) and (max-width: 991px) {
-  .featured-section {
+  .featured-sections {
     padding: 40px 24px;
   }
   .label-text{
-  font-size: 16px;
+  font-size: 21px;
   }
 
   .label-row {
@@ -722,22 +736,19 @@
   }
 
   .section-title {
-    left:   200px;
-    bottom: 60px;
-    font-size: 24px;
+
+    font-size: 44px;
   }
 
   .section-desc-wrk {
-    left: 100px;
-    bottom: 60px;
     max-width: 320px;
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .work-card {
     width: 100%;
     height: 320px;
-    left: 0;
+
   }
 
   .overlay {
@@ -775,37 +786,30 @@
    992px–1199px
 ========================= */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .featured-section {
-    padding: 50px 40px;
+  .featured-sections {
+    
   }
 
   .section-title {
-    left: 250px;
-    bottom: 80px;
-    font-size: 32px;
+    font-size: 52px;
   }
 
   .section-desc-wrk {
-    left: 10px;
-    bottom: 90px;
     max-width: 300px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
-  .title-wrapper1 {
+  .title-wrappers1 {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 40px;
     gap: 10px;
   }
 
 
   .work-card {
     width: 100%;
-    max-width: 1000px;
     height: 380px;
-    left: 0;
   }
 
   .overlay {
@@ -830,29 +834,25 @@
    1200px–1439px
 ========================= */
 @media (min-width: 1200px) and (max-width: 1439px) {
-  .featured-section {
-    padding: 60px 60px;
+  .featured-sections {
+  
   }
 
   .section-title {
-    left: 300px;
-    bottom: 85px;
-    font-size: 36px;
+    font-size: 55px;
   }
 
   .section-desc-wrk {
-    right: 10px;
-    bottom: 112px;
     max-width: 300px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
 
   .work-card {
     width: 100%;
-    max-width: 1100px;
+
     height: 410px;
-    left: px;
+
   }
 
   .overlay {
@@ -876,34 +876,32 @@
    1440px–1919px
 ========================= */
 @media (min-width: 1440px) and (max-width: 1919px) {
-  .featured-section {
-    padding: 60px 80px;
+  .featured-sections {
+    
   }
 
   .section-title {
-    left: 430px;
-    bottom: 91px;
-    font-size: clamp(22px, 4vw, 40px);
+    font-size: clamp(22px, 4vw, 60px);
   }
 
   .section-desc-wrk {
-    right: 40px;
-    bottom: 120px;
-    max-width: 280px;
-    font-size: 13px;
+    max-width: 350px;
+    font-size: 15px;
+    
   }
 .works-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 50px;
   position: relative;
-  left: 80px;
+
 
 }
   .work-card {
-    width: 1100px;
-    height: 430px;
-    left: 10px;
+  
+    height: 100vh;
+    width:99vw;
+  
   }
 
   .overlay {
@@ -915,7 +913,7 @@
 
   .project-title {
     left: 30px;
-    font-size: 22px;
+    font-size: 28px;
   }
 
   .tag {

@@ -13,8 +13,8 @@
   font-weight: 700;
 }
 
-/* FAQ Section Main Container */
-.faq-section {
+/* sk-faq Section Main Container */
+.sk-faq-section {
   padding: 100px 10%;
   display: flex;
   gap: 80px;
@@ -23,24 +23,24 @@
   box-sizing: border-box;
 }
 
-.faq-header {
+.sk-faq-header {
   flex: 1;
 }
 
-.label-wrapper1 {
+.sk-faq-labels-wrapper1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   color: #262561;
   font-family: "Futura", sans-serif;
-  font-size: 17px;
+  font-size: 21px;
   font-weight: 400;
   text-transform: capitalize;
   margin-bottom: 25px;
   position: relative;
 }
 
-.label-wrapper1::after {
+.sk-faq-labels-wrapper1::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -50,7 +50,7 @@
   background-color: #656565;
 }
 
-.orange-square4 {
+.sk-faq-orange-square4 {
   width: 10px;
   height: 10px;
   background: #fca311;
@@ -60,9 +60,8 @@
   top: 3px;
 }
 
-/* FIX: .faq-title h1-இல் இருந்து வெறும் .faq-title ஆக மாற்றப்பட்டுள்ளது */
-.faq-title {
- font-size: clamp(22px, 4vw, 40px);
+.sk-faq-title {
+  font-size: clamp(22px, 4vw, 60px);
   font-weight: 400;
   font-family: "Futura", sans-serif;
   line-height: 1.2;
@@ -72,8 +71,7 @@
   left: 140px;
 }
 
-/* FIX: .faq-sub p-இல் இருந்து வெறும் .faq-sub ஆக மாற்றப்பட்டுள்ளது */
-.faq-sub {
+.sk-faq-sub {
   color: #56565a;
   font-family: 'Hanken Grotesk', sans-serif !important;
   font-size: 14px;
@@ -85,7 +83,7 @@
   top: 10px;
 }
 
-.faq-btn {
+.sk-faq-btn {
   display: inline-flex;
   align-items: stretch;
   border: none;
@@ -97,8 +95,8 @@
   left: 150px;
 }
 
-.faq-btn .faq-btn-text {
-   background-color: #fcb037;
+.sk-faq-btn .sk-faq-btn-text {
+  background-color: #fcb037;
   color: #111111;
   padding: 7px 37px;
   font-size: 16px;
@@ -109,7 +107,7 @@
   align-items: center;
 }
 
-.faq-btn .faq-btn-arrow {
+.sk-faq-btn .sk-faq-btn-arrow {
   background-color: #f5b042;
   color: #000000;
   width: 40px;
@@ -121,18 +119,18 @@
   font-size: 16px;
 }
 
-.faq-accordion {
+.sk-faq-accordion {
   flex: 1.5;
   display: flex;
   padding: 20px 60px;
   flex-direction: column;
   row-gap: 13px;
-   position: relative;
+  position: relative;
   top: 70px;
   left: 60px;
 }
 
-.faq-item {
+.sk-faq-item {
   border: 0px solid #f5f6f7;
   border-radius: 3px; /* லேசான வளைவு பார்க்க அழகாக இருக்கும் */
   padding: 25px 25px;
@@ -140,15 +138,14 @@
   transition: all 0.3s ease;
   background-color: #f5f6f7;
   box-sizing: border-box;
- 
 }
 
-.faq-item.active {
+.sk-faq-item.sk-faq-active {
   background-color: #f7f7f7;
   border: 1px solid #d1d1d1;
 }
 
-.faq-question {
+.sk-faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -161,7 +158,7 @@
   right: 10px;
 }
 
-.faq-answer {
+.sk-faq-answer {
   color: #666;
   margin-top: 15px;
   line-height: 1.7;
@@ -177,40 +174,40 @@
 
 /* Extra small: 320px–374px */
 @media (min-width: 320px) and (max-width: 374px) {
-  .faq-section {
+  .sk-faq-section {
     padding: 40px 4%;
     gap: 20px;
     flex-direction: column;
     align-items: center;
   }
 
-  .faq-header {
+  .sk-faq-header {
     align-items: center;
     width: 100%;
   }
 
-  .label-wrapper1 {
+  .sk-faq-labels-wrapper1 {
     margin-bottom: 12px;
-    font-size: 16px;
+    font-size: 17px;
     position: relative;
     left: 80px;
     bottom: 20px;
   }
 
-  .label-wrapper1::after {
+  .sk-faq-labels-wrapper1::after {
     left: 60%;
     transform: translateX(-50%);
     width: 100px;
   }
 
-  .faq-title {
+  .sk-faq-title {
     left: 0;
     text-align: center;
     margin: 0 0 8px 0;
     font-size: clamp(28px, 5vw, 26px);
   }
 
-  .faq-sub {
+  .sk-faq-sub {
     left: 0;
     top: 0;
     text-align: center;
@@ -219,25 +216,25 @@
     font-size: 13px;
   }
 
-  .faq-btn {
+  .sk-faq-btn {
     left: 0;
     justify-content: center;
     width: 100%;
   }
 
-  .faq-accordion {
+  .sk-faq-accordion {
     left: 0;
     top: 0;
     padding: 0 4%;
     width: 100%;
   }
 
-  .faq-question {
+  .sk-faq-question {
     right: 0;
     font-size: 15px;
   }
 
-  .faq-answer {
+  .sk-faq-answer {
     padding-right: 0;
     font-size: 12px;
   }
@@ -245,33 +242,33 @@
 
 /* Mobile: 375px–480px */
 @media (min-width: 375px) and (max-width: 480px) {
-  .faq-section {
+  .sk-faq-section {
     padding: 45px 5%;
     gap: 24px;
     flex-direction: column;
     align-items: center;
   }
 
-  .faq-header {
+  .sk-faq-header {
     align-items: center;
     width: 100%;
   }
 
-  .label-wrapper1 {
+  .sk-faq-labels-wrapper1 {
     margin-bottom: 14px;
     position: relative;
     left: 110px;
-    font-size: 16px;
+    font-size: 17px;
     bottom: 20px;
   }
 
-  .label-wrapper1::after {
+  .sk-faq-labels-wrapper1::after {
     left: 65%;
     transform: translateX(-50%);
     width: 90px;
   }
 
-  .faq-title {
+  .sk-faq-title {
     left: 0;
     bottom: 10px;
     text-align: center;
@@ -279,7 +276,7 @@
     font-size: clamp(28px, 5vw, 28px);
   }
 
-  .faq-sub {
+  .sk-faq-sub {
     left: 0;
     top: 0;
     text-align: center;
@@ -288,25 +285,25 @@
     font-size: 13px;
   }
 
-  .faq-btn {
+  .sk-faq-btn {
     left: 0;
     justify-content: center;
     width: 100%;
   }
 
-  .faq-accordion {
+  .sk-faq-accordion {
     left: 0;
     top: 0;
     padding: 0 5%;
     width: 100%;
   }
 
-  .faq-question {
+  .sk-faq-question {
     right: 0;
     font-size: 15px;
   }
 
-  .faq-answer {
+  .sk-faq-answer {
     padding-right: 0;
     font-size: 12px;
   }
@@ -314,38 +311,38 @@
 
 /* Large mobile: 481px–767px */
 @media (min-width: 481px) and (max-width: 767px) {
-  .faq-section {
+  .sk-faq-section {
     padding: 50px 6%;
     gap: 28px;
     flex-direction: column;
     align-items: center;
   }
 
-  .faq-header {
+  .sk-faq-header {
     align-items: center;
     width: 100%;
   }
 
-  .label-wrapper1 {
+  .sk-faq-labels-wrapper1 {
     margin-bottom: 16px;
     position: relative;
     right: -50px;
   }
 
-  .label-wrapper1::after {
+  .sk-faq-labels-wrapper1::after {
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
   }
 
-  .faq-title {
+  .sk-faq-title {
     left: 0;
     text-align: center;
     margin: 0 0 12px 0;
     font-size: clamp(20px, 4.5vw, 32px);
   }
 
-  .faq-sub {
+  .sk-faq-sub {
     left: 0;
     top: 0;
     text-align: center;
@@ -354,25 +351,25 @@
     font-size: 13.5px;
   }
 
-  .faq-btn {
+  .sk-faq-btn {
     left: 0;
     justify-content: center;
     width: 100%;
   }
 
-  .faq-accordion {
+  .sk-faq-accordion {
     left: 0;
     top: 0;
     padding: 0 6%;
     width: 100%;
   }
 
-  .faq-question {
+  .sk-faq-question {
     right: 0;
     font-size: 15.5px;
   }
 
-  .faq-answer {
+  .sk-faq-answer {
     padding-right: 0;
     font-size: 12.5px;
   }
@@ -380,40 +377,40 @@
 
 /* Tablet: 768px–991px */
 @media (min-width: 768px) and (max-width: 991px) {
-  .faq-section {
+  .sk-faq-section {
     padding: 60px 8%;
     gap: 36px;
     flex-direction: column;
     align-items: center;
   }
 
-  .faq-header {
+  .sk-faq-header {
     align-items: center;
     width: 100%;
   }
 
-  .label-wrapper1 {
+  .sk-faq-labels-wrapper1 {
     margin-bottom: 18px; 
-    font-size: 16px;
+    font-size: 19px;
     position: relative;
     left: 250px;
     bottom: 20px;
   }
 
-  .label-wrapper1::after {
+  .sk-faq-labels-wrapper1::after {
     left: 60%;
     transform: translateX(-50%);
     width: 105px;
   }
 
-  .faq-title {
+  .sk-faq-title {
     left: 0;
     text-align: center;
     margin: 0 0 14px 0;
     font-size: clamp(21px, 3.8vw, 36px);
   }
 
-  .faq-sub {
+  .sk-faq-sub {
     left: 0;
     top: 0;
     text-align: center;
@@ -422,25 +419,25 @@
     font-size: 13.8px;
   }
 
-  .faq-btn {
+  .sk-faq-btn {
     left: 0;
     justify-content: center;
     width: 100%;
   }
 
-  .faq-accordion {
+  .sk-faq-accordion {
     left: 0;
     top: 0;
     padding: 0 8%;
     width: 100%;
   }
 
-  .faq-question {
+  .sk-faq-question {
     right: 0;
     font-size: 15.8px;
   }
 
-  .faq-answer {
+  .sk-faq-answer {
     padding-right: 0;
     font-size: 12.8px;
   }
@@ -448,133 +445,178 @@
 
 /* Small laptop: 992px–1199px */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .faq-section {
+  .sk-faq-section {
     padding: 70px 9%;
     gap: 50px;
   }
 
-  .faq-title {
+  .sk-faq-title {
     left: 80px;
+    font-size:45px;
   }
 
-  .faq-sub {
+  .sk-faq-sub {
     left: 90px;
     top: 8px;
   }
 
-  .faq-btn {
+  .sk-faq-btn {
     left: 90px;
   }
 
-  .faq-accordion {
+  .sk-faq-accordion {
     left: 40px;
     top: 50px;
     padding: 20px 40px;
   }
 
-  .faq-question {
+  .sk-faq-question {
     right: 8px;
   }
 }
 
 /* Laptop: 1200px–1439px */
 @media (min-width: 1200px) and (max-width: 1439px) {
-  .faq-section {
+  .sk-faq-section {
     padding: 90px 9.5%;
     gap: 65px;
   }
 
-  .faq-title {
+  .sk-faq-title {
     left: 110px;
+    font-size:50px;
   }
 
-  .faq-sub {
+  .sk-faq-sub {
     left: 120px;
     top: 9px;
   }
 
-  .faq-btn {
+  .sk-faq-btn {
     left: 120px;
   }
 
-  .faq-accordion {
+  .sk-faq-accordion {
     left: 50px;
     top: 60px;
     padding: 20px 50px;
   }
 
-  .faq-question {
+  .sk-faq-question {
     right: 9px;
   }
 }
 
 /* Desktop: 1440px–1919px */
 @media (min-width: 1440px) and (max-width: 1919px) {
-  .faq-section {
+  .sk-faq-section {
     padding: 100px 10%;
     gap: 80px;
   }
 
-  .faq-title {
+  .sk-faq-title {
     left: 140px;
+    font-size:60px;
   }
 
-  .faq-sub {
+  .sk-faq-sub {
     left: 150px;
     top: 10px;
   }
 
-  .faq-btn {
+  .sk-faq-btn {
     left: 150px;
   }
 
-  .faq-accordion {
+  .sk-faq-accordion {
     left: 60px;
     top: 70px;
     padding: 20px 60px;
   }
 
-  .faq-question {
+  .sk-faq-question {
     right: 10px;
   }
 }
 
 /* Large desktop: 1920px+ */
 @media (min-width: 1920px) {
-  .faq-section {
+  .sk-faq-section {
     padding: 120px 12%;
     gap: 100px;
     max-width: 1920px;
     margin: 0 auto;
   }
 
-  .faq-title {
+  .sk-faq-title {
     left: 180px;
-    font-size: clamp(26px, 3vw, 46px);
+    font-size: clamp(26px, 3vw, 60px);
   }
 
-  .faq-sub {
+  .sk-faq-sub {
     left: 190px;
     top: 12px;
     font-size: 15px;
   }
 
-  .faq-btn {
+  .sk-faq-btn {
     left: 190px;
   }
 
-  .faq-accordion {
+  .sk-faq-accordion {
     left: 80px;
     top: 80px;
     padding: 25px 80px;
   }
 
-  .faq-question {
+  .sk-faq-question {
     font-size: 17px;
     right: 12px;
   }
 
-  .faq-answer {
+  .sk-faq-answer {
     font-size: 14px;
   }
+}
+
+/* =========================
+   Ultra-Smooth FAQ Animation
+   ========================= */
+
+.sk-faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: grid-template-rows;
+}
+
+.sk-faq-answer-wrapper.sk-faq-open {
+  grid-template-rows: 1fr;
+}
+
+.sk-faq-answer {
+  overflow: hidden;
+  min-height: 0; /* CRITICAL FIX: Ensures the grid animation actually runs */
+}
+
+.sk-faq-answer-inner {
+  color: #666;
+  padding-top: 15px; 
+  line-height: 1.7;
+  font-family: "Inter", sans-serif;
+  padding-right: 20px;
+  font-size: 13px;
+  box-sizing: border-box;
+  
+  /* Start hidden */
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+/* Slide and fade in when open */
+.sk-faq-answer-wrapper.sk-faq-open .sk-faq-answer-inner {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease 0.1s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
 }

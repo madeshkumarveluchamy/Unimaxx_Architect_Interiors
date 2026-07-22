@@ -18,21 +18,24 @@
   padding: 60px 80px 40px;
   background: #fff;
   color: #111;
-  overflow-x: hidden;
+  
+  /* CHANGED: Remove overflow-x: hidden and use overflow: clip */
+  overflow: clip; 
+  
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
 
 .services-header {
-  /* Keep your existing rules */
   display: flex;
-  gap:50px;
+  gap: 50px;
   flex-direction: row;
   justify-content: center; 
-   width:100% !important;
-  /* Add this to vertically center the items */
+  width: 100% !important;
   align-items: center; 
-  padding-bottom:50px;
+  
+  /* Itha 50px la irunthu 20px (or 10px) ku korachukonga */
+  padding-bottom: 10px; 
 }
 
 /* ===== Desktop (keep your original layout with offsets) ===== */
@@ -156,16 +159,63 @@
 }
 
 /* ===== Service grid (desktop) ===== */
+/* ===== Service grid (desktop) ===== */
 .service-item {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr) minmax(260px, 400px);
   gap: 28px;
   align-items: start;
-  padding: 22px 0;
-  position: relative;
-  transition: background 300ms ease;
+  
+  /* STICKY CARD EFFECT ADDITIONS */
+  position: sticky;
+  top: 20px; /* How far from the top the card stops. Adjust if you have a sticky navbar */
+  background: #ffffff; /* MUST be solid so it hides the card behind it */
+  padding: 30px 20px; /* Added padding to give it a "card" feel */
+  border-radius: 24px; /* Rounds the corners of the cards */
+  box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.05); /* Adds a shadow to the top edge for depth */
+  z-index: 1; 
+  
   cursor: pointer;
+  
+  /* Keep your original Intersection Observer animation states */
+  opacity: 0;
+  transform: translateY(50px); 
+  transition: background 300ms ease, opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
+.service-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Reverse Stacking Order ===== */
+/* This forces the first card to stay on top, 
+   and makes the following cards slide underneath it */
+
+/* ===== Forward Stacking Order ===== */
+/* Puthusa varura cards palaya card-ah overlap panra mathiri z-index and top offset */
+
+.service-item:nth-child(1) { 
+  z-index: 1; 
+  top: 20px; 
+}
+.service-item:nth-child(2) { 
+  z-index: 2; 
+  top: 40px; /* Sila pixels add pannum pothu layer aagura effect nalla irukum */
+}
+.service-item:nth-child(3) { 
+  z-index: 3; 
+  top: 60px; 
+}
+.service-item:nth-child(4) { 
+  z-index: 4; 
+  top: 80px; 
+}
+.service-item:nth-child(5) { 
+  z-index: 5; 
+  top: 100px; 
+}
+
 
 .vertical-line-container {
   display: flex;

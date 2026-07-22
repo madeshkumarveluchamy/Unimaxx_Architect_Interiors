@@ -132,6 +132,19 @@
   left: 60px;
 }
 
+@media(max-width:768px){
+  .faq-accordion1 {
+  flex: 1.5;
+  display: flex;
+  padding: 20px 20px;
+  flex-direction: column;
+  row-gap: 13px;
+   position: relative;
+  top: 70px;
+  left:0px;
+}
+}
+
 .faq-item {
   border: 0px solid #f5f6f7;
   border-radius: 3px; /* லேசான வளைவு பார்க்க அழகாக இருக்கும் */

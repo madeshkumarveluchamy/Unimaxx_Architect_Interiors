@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './css/ServicesSection.css';
 
 import img1 from '../../assets/res-design.png';
@@ -9,6 +9,9 @@ import img5 from '../../assets/e-design.png';
 
 const ServicesSection = () => {
   const [activeIdx, setActiveIdx] = useState(null);
+  
+  // 1. Create a ref to store all the service item DOM elements
+  const itemRefs = useRef([]);
 
   const services = [
     { id: '001', title: 'Residential Design', desc: 'Complete home interiors that reflect your style functional, beautiful, and deeply personal.', count: '100+', img: img1 },
@@ -18,9 +21,35 @@ const ServicesSection = () => {
     { id: '005', title: 'Virtual E-Design', desc: 'Virtual E-Design service, layouts and furnishing plans without leaving your home.', count: '50+', img: img5 },
   ];
 
+  // 2. Setup the Intersection Observer to trigger the animation on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add the animation class when the element comes into view
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      { 
+        threshold: 0.15, // Triggers when 15% of the card is visible 
+        rootMargin: "0px 0px -50px 0px" // Slight offset so it triggers right before it fully enters
+      }
+    );
+
+    // Observe all the item refs
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="services-section">
       <div className="services-header">
+        {/* ... (Keep your existing header code exactly the same) ... */}
         <div className="title-row">
           <span className="orange-square2">■</span>
           <div className="title-box">
@@ -33,11 +62,11 @@ const ServicesSection = () => {
         <h1 className="pg-title">Personalized Care.<br />Inspired Spaces.</h1>
         
         <div>
-        <p className="subtitle1">Creative solutions tailored for every style and <br/> every space.</p>
-        <button className="view-all-btn3">
-          <span className="text3">View All Services</span>
-          <span className="arrow-box3"><span className="arr-diagonal1">↗</span></span>
-        </button>
+          <p className="subtitle1">Creative solutions tailored for every style and <br/> every space.</p>
+          <button className="view-all-btn3">
+            <span className="text3">View All Services</span>
+            <span className="arrow-box3"><span className="arr-diagonal1">↗</span></span>
+          </button>
         </div>
       </div>
 
@@ -47,6 +76,8 @@ const ServicesSection = () => {
           return (
             <div
               key={item.id}
+              // 3. Attach the specific element to our ref array
+              ref={(el) => (itemRefs.current[index] = el)}
               className={`service-item ${isActive ? 'active-service' : ''}`}
               onMouseEnter={() => setActiveIdx(index)}
               onMouseLeave={() => setActiveIdx(null)}
@@ -56,6 +87,7 @@ const ServicesSection = () => {
               role="button"
               aria-pressed={isActive}
             >
+              {/* ... (Keep the rest of your card internals exactly the same) ... */}
               <div className="vertical-line-container">
                 <span className="orange-square-small">■</span>
                 <span className="item-id">({item.id})</span>

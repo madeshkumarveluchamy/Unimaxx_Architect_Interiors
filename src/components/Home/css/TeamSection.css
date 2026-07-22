@@ -40,7 +40,7 @@
   gap: 8px;
   color: #262561;
   font-family: "Futura", sans-serif;
-  font-size: 17px;
+  font-size: 21px;
   font-weight: 400;
   text-transform: capitalize;
   margin-bottom: 25px;
@@ -87,7 +87,6 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding-bottom: 30vh;
   overflow: visible !important;
 }
 
@@ -103,7 +102,6 @@
   display: flex;
   max-height: 280px;
   width: 100%;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
   position: relative;
   right: 30px;
@@ -249,7 +247,6 @@
 
   .team-stacking-scroller {
     gap: 28px;
-    padding-bottom: 20vh;
   }
 
   .team-overlap-card {
@@ -321,7 +318,7 @@
 
   .team-section-title {
     margin-bottom: 14px;
-    font-size: 15.5px;
+    font-size: 17px;
     justify-content: center;
   }
 
@@ -339,7 +336,6 @@
 
   .team-stacking-scroller {
     gap: 30px;
-    padding-bottom: 20vh;
   }
 
   .team-overlap-card {
@@ -411,7 +407,7 @@
 
   .team-section-title {
     margin-bottom: 16px;
-    font-size: 16px;
+    font-size: 17px;
     justify-content: center;
   }
 
@@ -429,7 +425,6 @@
 
   .team-stacking-scroller {
     gap: 32px;
-    padding-bottom: 22vh;
   }
 
   .team-overlap-card {
@@ -500,7 +495,7 @@
 
   .team-section-title {
     margin-bottom: 18px;
-    font-size: 16.5px;
+    font-size: 17px;
     justify-content: center;
   }
 
@@ -516,7 +511,6 @@
 
   .team-stacking-scroller {
     gap: 38px;
-    padding-bottom: 24vh;
   }
 
   .team-overlap-card {
@@ -597,7 +591,6 @@
 
   .team-stacking-scroller {
     gap: 44px;
-    padding-bottom: 26vh;
   }
 
   .team-overlap-card {
@@ -672,18 +665,17 @@
 
   .team-stacking-scroller {
     gap: 48px;
-    padding-bottom: 28vh;
   }
 
   .team-overlap-card {
     top: 88px !important;
     right: 26px;
-    max-height: 275px;
+    max-height: 375px;
   }
 
   .team-image-wrap {
     width: 420px;
-    height: 225px;
+    height: 325px;
   }
 
   .team-details {
@@ -740,18 +732,17 @@
 
   .team-stacking-scroller {
     gap: 50px;
-    padding-bottom: 30vh;
   }
 
   .team-overlap-card {
     top: 90px !important;
     right: 30px;
-    max-height: 280px;
+    height: 380px;
   }
 
   .team-image-wrap {
     width: 450px;
-    height: 230px;
+    height: 380px;
   }
 
   .team-details {
@@ -797,7 +788,7 @@
 
   .team-section-title {
     margin-bottom: 30px;
-    font-size: 18px;
+    font-size: 21px;
   }
 
   .team-section-title::after {
@@ -811,7 +802,6 @@
 
   .team-stacking-scroller {
     gap: 60px;
-    padding-bottom: 35vh;
   }
 
   .team-overlap-card {

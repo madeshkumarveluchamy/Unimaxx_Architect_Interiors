@@ -30,9 +30,9 @@ box-sizing: border-box;
 Header
 ========================= */
 .voc-header {
-display: grid;
-grid-template-columns: 1fr auto 1fr;
-align-items: start;
+display: flex;
+justify-content:space-around;
+align-items: center;
 margin-bottom: 60px;
 gap: 20px;
 }
@@ -56,7 +56,7 @@ height: 8px;
 background-color: #F8B946;
 display: inline-block;
 position: relative;
-bottom: 10px;
+bottom: 4px;
 }
 
 .voc-badge-text {
@@ -65,10 +65,10 @@ align-items: center;
 gap: 8px;
 color: #262561;
 font-family: "Futura", sans-serif;
-font-size: 17px;
+font-size: 21px;
 font-weight: 400;
 text-transform: capitalize;
-margin-bottom: 25px;
+margin-bottom: 10px;
 position: relative;
 }
 
@@ -87,7 +87,7 @@ text-align: center;
 }
 
 .voc-title {
-font-size: clamp(22px, 4vw, 40px);
+font-size: clamp(22px, 4vw, 55px);
 font-weight: 400;
 color: #000;
 font-family: "Futura", sans-serif;
@@ -102,10 +102,8 @@ width: 100%;
 .voc-header-right {
 display: flex;
 flex-direction: column;
-align-items: flex-start;
-justify-content: flex-start;
+
 max-width: 280px;
-margin-left: auto;
 }
 
 .voc-subtitle {
@@ -121,7 +119,7 @@ width: 100%;
 .voc-nav-buttons {
 display: flex;
 gap: 12px;
-justify-content: flex-start;
+justify-content: flex-end;
 }
 
 .voc-arrow-btn {
@@ -136,7 +134,7 @@ align-items: center;
 justify-content: center;
 cursor: pointer;
 position: relative;
-left: 180px;
+
 transition: opacity 0.2s;
 }
 
@@ -375,7 +373,6 @@ display: inline-flex;
 align-items: center;
 gap: 10px;
 position: relative;
-left: 20px;
 }
 
 .voc-orange-square {
@@ -384,9 +381,26 @@ height: 8px;
 background-color: #F8B946;
 display: inline-block;
 position: relative;
-bottom: 10px;
+bottom: 4px;
+}
+/* Update this in your CSS file */
+.voc-slide {
+  width: 700px;
+  max-width: 100%;
+  /* transition: all 0.4s ease; <--- Itha delete/comment pannidunga */
 }
 
+.voc-card {
+  opacity: 0.4;
+  /* Card opacity maarurathuku mattum transition vechukalam */
+  transition: opacity 1s ease; 
+  background: #f1f0ee;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  box-sizing: border-box;
+}
 .voc-badge-text {
 display: inline-flex;
 align-items: center;
@@ -402,18 +416,16 @@ position: relative;
 
 
   .voc-title {
-    font-size: clamp(22px, 6vw, 20px);
+    font-size: clamp(22px, 6vw, 35px);
     margin-bottom: 10px;
     text-align: center;
     position: relative;
     bottom: 20px;
-    right: 30px;
   }
 
   .voc-subtitle {
     font-size: 12px;
     position: relative;
-    right: 0;
     bottom: 2px;
     text-align: center;
     margin-top: 4px;
@@ -423,7 +435,6 @@ position: relative;
   .voc-nav-buttons {
     justify-content: center;
     position: relative;
-    right: 50px;
     bottom: 30px;
     margin-top: 8px;
     display: flex;
@@ -446,9 +457,24 @@ position: relative;
     border-radius: 10px;
     text-align: center;
   }
+   .voc-header {
+    display:flex;
+    flex-direction:column;
+    margin-bottom: 20px;
+    justify-content:center;
+    gap: 5px;
+  }
+
+  .voc-header-left,
+  .voc-header-center,
+  .voc-header-right {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 
   .voc-title {
-    font-size: clamp(22px, 6vw, 20px);
+    font-size: clamp(22px, 6vw, 30px);
     margin-bottom: 10px;
     bottom: 0;
     text-align: center;
@@ -459,7 +485,6 @@ position: relative;
   .voc-subtitle {
     font-size: 11px;
     position: relative;
-    right: 0;
     bottom: 20px;
     text-align: center;
     margin-top: 4px;
@@ -468,7 +493,6 @@ position: relative;
   .voc-nav-buttons {
     justify-content: center;
     position: relative;
-    right: 50px;
     bottom: 30px;
     margin-top: 8px;
     display: flex;
@@ -485,6 +509,9 @@ position: relative;
   .voc-avatar { width: 30px; height: 30px; }
   .voc-author-name { font-size: 13px; }
   .voc-author-role { font-size: 11px; }
+
+
+
 }
 
 /* =========================================================
@@ -493,13 +520,14 @@ position: relative;
    ========================================================= */
 @media (max-width: 600px) {
   .voc-section {
-    padding: 36px 12px;
+    padding: 76px 12px;
   }
 
-  .voc-header {
-    grid-template-columns: 1fr;
-    gap: 10px;
+   .voc-header {
+    display:flex;
+    flex-direction:column;
     margin-bottom: 20px;
+    justify-content:center;
   }
   .voc-badge-text{
     font-size: 16px;
@@ -527,7 +555,7 @@ position: relative;
   .voc-title {
     margin-bottom: 12px;
     bottom: 0;
-    font-size: clamp(24px, 6vw, 26px);
+    font-size: clamp(24px, 6vw, 35px);
     text-align: center;
     position: relative;
     bottom: 20px;
@@ -537,7 +565,6 @@ position: relative;
   .voc-subtitle {
     font-size: clamp(11px, 3.2vw, 13px);
     position: relative;
-    right: 30px;
     bottom: 20px;
     text-align: center;
     margin-top: 4px;
@@ -546,7 +573,6 @@ position: relative;
   .voc-nav-buttons {
     justify-content: center;
     position: relative;
-    right: 30px;
     bottom: 30px;
     margin-top: 8px;
     display: flex;
@@ -623,7 +649,7 @@ position: relative;
   }
 
   .voc-title {
-    font-size: clamp(22px, 6vw, 20px);
+    font-size: clamp(22px, 6vw, 25px);
     margin-bottom: 10px;
     bottom: 0;
     text-align: center;
@@ -634,7 +660,6 @@ position: relative;
   .voc-subtitle {
     font-size: 11px;
     position: relative;
-    right: 0;
     bottom: 20px;
     text-align: center;
     margin-top: 4px;
@@ -643,7 +668,6 @@ position: relative;
   .voc-nav-buttons {
     justify-content: center;
     position: relative;
-    right: 0;
     bottom: 30px;
     margin-top: 8px;
     display: flex;

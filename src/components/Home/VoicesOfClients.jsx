@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, EffectCoverflow } from 'swiper/modules';
+import { Navigation, EffectCoverflow, Autoplay } from 'swiper/modules';
 
 // Swiper CSS imports
 import 'swiper/css';
@@ -14,12 +14,12 @@ import './css/VoicesOfClients.css';
 import slide1 from '../../assets/voice1.png';
 import slide2 from '../../assets/voice2.png';
 import slide3 from '../../assets/voice3.png';
-import vasuAvatar from '../../assets/vasu-icon.png'; // Update with your actual avatar path
+import vasuAvatar from '../../assets/vasu-icon.png';
 
 export default function VoicesOfClients() {
   
-  // அனைத்து ஸ்லைடுகளுக்கும் கல்வித் தரவுடன் விரிவான மதிப்புரைகள் (வாசுவே மதிப்பாய்வாளர்)
-  const slides = [
+  // Base 3 slides
+  const baseSlides = [
     {
       id: 2,
       image: slide2,
@@ -41,7 +41,7 @@ export default function VoicesOfClients() {
       title: 'Tranquility',
       year: '2025',
       tags: ['Minimalism', 'Natural'],
-      hasReview: true, // அனைத்து ஸ்லைடுகளிலும் இப்போது மதிப்புரை உள்ளது
+      hasReview: true,
       review: {
         headline: 'Natural Minimalism Personified',
         content: "Tranquility perfectly captures the essence of modern living. Minimalist design and native elements blend seamlessly to provide true peace of mind. A wonderful experience.",
@@ -50,7 +50,6 @@ export default function VoicesOfClients() {
         authorAvatar: vasuAvatar,
       },
     },
-
     {
       id: 3,
       image: slide3,
@@ -66,13 +65,13 @@ export default function VoicesOfClients() {
         authorAvatar: vasuAvatar,
       },
     },
-    
-     
   ];
+
+  // 1. Slides-ah duplicate panrom (3 irunthu 6 aaguthu) for smooth loop
+  const slides = [...baseSlides, ...baseSlides.map(slide => ({ ...slide, id: slide.id + '_dup' }))];
 
   return (
     <section className="voc-section">
-      {/* Top Header Area */}
       <header className="voc-header">
         <div className="voc-header-left">
           <div className="voc-badge">
@@ -104,15 +103,24 @@ export default function VoicesOfClients() {
         </div>
       </header>
 
-      {/* Swiper Slider Area */}
-      <div className="voc-slider-container">
+     <div className="voc-slider-container">
         <Swiper
-          modules={[Navigation, EffectCoverflow]}
+          modules={[Navigation, EffectCoverflow, Autoplay]}
           effect="coverflow"
           grabCursor={true}
           centeredSlides={true}
           slidesPerView="auto"
-          initialSlide={1} // Makes the second slide (Azure Hallway) active by default
+          
+          // --- SMOOTHNESS FIXES START ---
+          speed={1000} // Oru slide maarum neram (1000ms = 1 second for silky smooth transition)
+          loop={true} 
+          autoplay={{
+            delay: 3000, // 3 seconds-kku oru murai maarum
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true, 
+          }}
+          // --- SMOOTHNESS FIXES END ---
+          
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
@@ -133,7 +141,6 @@ export default function VoicesOfClients() {
                   <div className="voc-image-wrapper">
                     <img src={slide.image || "https://via.placeholder.com/800x500"} alt={slide.title} className="voc-main-img" />
                     
-                    {/* Glassmorphism Review Overlay - Only visible if has review; Swiper handles fading for non-active slides */}
                     {slide.hasReview && (
                       <div className="voc-glass-overlay">
                         <h3 className="voc-glass-title">{slide.review.headline}</h3>
@@ -153,7 +160,6 @@ export default function VoicesOfClients() {
                     )}
                   </div>
 
-                  {/* Bottom Meta Data */}
                   <div className="voc-card-meta">
                     <div className="voc-meta-left">
                       <h4 className="voc-item-title">{slide.title}</h4>
@@ -161,7 +167,7 @@ export default function VoicesOfClients() {
                     </div>
                     <div className="voc-meta-right">
                       {slide.tags.map((tag, index) => (
-                        <span key={index} className="voc-tag">{tag}</span>
+                        <span key={`${slide.id}-${index}`} className="voc-tag">{tag}</span>
                       ))}
                     </div>
                   </div>

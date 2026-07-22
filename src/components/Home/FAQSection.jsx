@@ -1,17 +1,17 @@
 import { useState } from 'react';
-import './css/FAQSection.css';
+import './css/faqSection.css';
 
-const faqData = [
+const faqsData = [
   { 
-    question: 'What services does Calibre offer?', 
+    question: 'What services does Calibre offer?',
     answer: 'We provide full-service interior design, home styling, space planning, and renovation support for residential and select commercial projects.' 
   },
   { 
-    question: 'How does a typical project start?', 
-    answer: 'We begin with an initial consultation to understand your vision and requirements.' 
+    question: 'How does a typical project start?',
+    answer: 'We begin with an initial consultation to understand your vision and requirements.'
   },
   { 
-    question: 'Do you handle renovations as well as design?', 
+    question: 'Do you handle renovations as well as design?',
     answer: 'Yes, we provide end-to-end renovation support alongside our design services.' 
   },
   { 
@@ -24,43 +24,49 @@ const faqData = [
   },
 ];
 
-const FAQSection = () => {
-  // ஆரம்பத்தில் எந்த கேள்வியும் திறந்திருக்கக் கூடாது என்பதால் 'null' கொடுக்கப்பட்டுள்ளது
-  const [activeIndex, setActiveIndex] = useState(null);
+const FaqsSection = () => {
+  // 0 means the first question is open by default
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // க்ளிக் செய்யும் போது, ஏற்கனவே திறந்திருந்தால் மூடிவிடும் (null), இல்லையென்றால் திறக்கும் (index)
   const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    setActiveIndex(index);
   };
 
   return (
-    <section className="faq-section">
-      <div className="faq-header">
-        <div className="label-wrapper1">
-          <span className="orange-square4"></span> Client Resources
+    <section className="sk-faq-section">
+      <div className="sk-faq-header">
+        <div className="sk-faq-labels-wrapper1">
+          <span className="sk-faq-orange-square4"></span> Client Resources
         </div>
-        <h1 className="faq-title">Got Questions?</h1>
-        <p className='faq-sub'>We've answered some of the most common questions about our services.</p>
-        <button className="faq-btn">
-          <span className="faq-btn-text">Contact Us</span>
-          <span className="faq-btn-arrow">↗</span>
+        <h1 className="sk-faq-title">Got Questions?</h1>
+        <p className="sk-faq-sub">We've answered some of the most common questions about our services.</p>
+        <button className="sk-faq-btn">
+          <span className="sk-faq-btn-text">Contact Us</span>
+          <span className="sk-faq-btn-arrow">↗</span>
         </button>
       </div>
 
-      <div className="faq-accordion">
-        {faqData.map((item, index) => (
+      <div className="sk-faq-accordion">
+        {faqsData.map((item, index) => (
           <div 
             key={index} 
-            className={`faq-item ${activeIndex === index ? 'active' : ''}`}
+            className={`sk-faq-item ${activeIndex === index ? 'sk-faq-active' : ''}`}
             onClick={() => toggleAccordion(index)}
           >
-            <div className="faq-question">
+            <div className="sk-faq-question">
               <span>{item.question}</span>
-              <span className="icon">{activeIndex === index ? '—' : '+'}</span>
+              <span className="sk-faq-icon">{activeIndex === index ? '—' : '+'}</span>
             </div>
-            {activeIndex === index && (
-              <div className="faq-answer">{item.answer}</div>
-            )}
+            
+            {/* The wrapper that handles the animation (NO && condition here!) */}
+            <div className={`sk-faq-answer-wrapper ${activeIndex === index ? 'sk-faq-open' : ''}`}>
+              <div className="sk-faq-answer">
+                <div className="sk-faq-answer-inner">
+                  {item.answer}
+                </div>
+              </div>
+            </div>
+
           </div>
         ))}
       </div>
@@ -68,4 +74,4 @@ const FAQSection = () => {
   );
 };
 
-export default FAQSection;
+export default FaqsSection;

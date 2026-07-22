@@ -48,13 +48,15 @@ const ExperienceSection = () => {
           Concept → Reality
         </div>
 
-        <div className="header-content">
-          <h2 className="title">
+        <h2 className="title">
             Experience-led<br />Design, Perfected.
           </h2>
 
+        <div className="header-content">
+          
+
           <div className="right-side">
-            <p className="sub-text1">
+            <p className="sub-text1 ">
               A visual library of interiors brought to life<br />
               from blueprint to beauty.
             </p>
