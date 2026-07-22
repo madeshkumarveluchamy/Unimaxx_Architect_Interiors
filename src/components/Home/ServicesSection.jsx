@@ -14,7 +14,7 @@ const ServicesSection = () => {
   const itemRefs = useRef([]);
 
   const services = [
-    { id: '001', title: 'Residential Design', desc: 'Complete home interiors that reflect your style functional, beautiful, and deeply personal.', count: '100+', img: img1 },
+    { id: '0001', title: 'Residential Design', desc: 'Complete home interiors that reflect your style functional, beautiful, and deeply personal.', count: '100+', img: img1 },
     { id: '002', title: 'Interior Renovations', desc: 'We rework layouts, update materials, and give tired spaces a fresh, modern edge.', count: '55+', img: img2 },
     { id: '003', title: 'Commercial Interior Design', desc: 'Smart, branded spaces for offices, cafés, and retail that engage and perform.', count: '25+', img: img3 },
     { id: '004', title: 'Styling & Decor', desc: 'Finishing touches—furniture, art, and accents that bring personality and polish.', count: '40+', img: img4 },
